@@ -1,5 +1,7 @@
 package com.example.demoproject.student;
 
+import com.example.demoproject.student.model.Student;
+import com.example.demoproject.student.repository.StudentRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,24 +15,20 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 class StudentRepositoryTest {
 
     @Autowired
-    private StudentRepository test;
+    private StudentRepository student;
 
     @AfterEach
-    void tearDown(){
-        test.deleteAll();
+    void tearDown() {
+        student.deleteAll();
     }
 
     @Test
     void itShouldCheckIfStudentEmailExists() {
-        String email="gana@gmail.com";
-        Student student= new Student(
-                "Gana",
-                email,
-                LocalDate.of(1996,07,04)
-        );
-        test.save(student);
+        String email = "gana@gmail.com";
+        Student studentdetails = new Student("Gana", email, LocalDate.of(1996, 07, 04));
+        student.save(studentdetails);
 
-        Boolean exists = test.selectExistsEmail(email);
+        Boolean exists = student.selectExistsEmail(email);
 
         assertThat(exists).isTrue();
 
@@ -38,9 +36,9 @@ class StudentRepositoryTest {
 
     @Test
     void itShouldCheckIfStudentEmailDoesNotExists() {
-        String email="gana@gmail.com";
+        String email = "gana@gmail.com";
 
-        Boolean exists = test.selectExistsEmail(email);
+        Boolean exists = student.selectExistsEmail(email);
 
         assertThat(exists).isFalse();
 
