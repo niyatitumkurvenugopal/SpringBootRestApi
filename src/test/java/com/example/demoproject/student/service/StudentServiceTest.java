@@ -1,8 +1,7 @@
-package com.example.demoproject.student;
+package com.example.demoproject.student.service;
 
 import com.example.demoproject.student.model.Student;
 import com.example.demoproject.student.repository.StudentRepository;
-import com.example.demoproject.student.service.StudentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,10 +12,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -42,11 +37,7 @@ class StudentServiceTest {
 
     @Test
     void canAddNewStudent() {
-        Student studentdetails = new Student(
-                "Gana",
-                "gana@gmail.com",
-                LocalDate.of(1996, 07, 04)
-        );
+        Student studentdetails = new Student("Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04));
 
         student.addNewStudent(studentdetails);
         ArgumentCaptor<Student> studentArgumentCaptor = ArgumentCaptor.forClass(Student.class);
@@ -56,8 +47,6 @@ class StudentServiceTest {
 
         assertThat(capturedStudent).isEqualTo(studentdetails);
     }
-
-
 
 
 }

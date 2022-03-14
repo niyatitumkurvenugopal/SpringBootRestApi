@@ -1,7 +1,7 @@
 package com.example.demoproject.student.config;
 
-import com.example.demoproject.student.repository.StudentRepository;
 import com.example.demoproject.student.model.Student;
+import com.example.demoproject.student.repository.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,23 +13,23 @@ import java.util.List;
 public class StudentConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner(StudentRepository repository){
-        return args->{
-             Student niyati= new Student(
+    CommandLineRunner commandLineRunner(StudentRepository repository) {
+        return args -> {
+            Student niyati = new Student(
                     "Niyati",
                     "niyati@gmail.com",
-                    LocalDate.of(1999,12,7)
+                    LocalDate.of(1999, 12, 7)
 
             );
 
-            Student gana= new Student(
+            Student gana = new Student(
                     "Bindu",
                     "bindu@gmail.com",
-                    LocalDate.of(1996,07,04)
+                    LocalDate.of(1996, 07, 04)
 
             );
             repository.saveAll(
-                    List.of(niyati,gana)
+                    List.of(niyati, gana)
             );
         };
     }
