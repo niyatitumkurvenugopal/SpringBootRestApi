@@ -1,7 +1,6 @@
 package com.niyati.springbootproject.repository;
 
-import com.niyati.springboot.model.Student;
-import com.niyati.springboot.repository.StudentRepository;
+import com.niyati.springbootproject.model.Student;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
