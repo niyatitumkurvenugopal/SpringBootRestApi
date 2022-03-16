@@ -1,7 +1,7 @@
-package com.example.demoproject.student.controller;
+package com.niyati.springbootproject.controller;
 
-import com.example.demoproject.student.model.Student;
-import com.example.demoproject.student.service.StudentService;
+import com.niyati.springbootproject.model.Student;
+import com.niyati.springbootproject.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +27,5 @@ public class StudentController {
     public void registerNewStudent(@RequestBody Student student) {
         studentService.addNewStudent(student);
     }
-
-
 }
+

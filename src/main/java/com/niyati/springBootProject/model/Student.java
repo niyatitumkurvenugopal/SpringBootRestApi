@@ -1,8 +1,9 @@
-package com.example.demoproject.student.model;
+package com.niyati.springbootproject.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
+
 
 @Entity
 @Table
@@ -78,6 +79,5 @@ public class Student {
     public void setAge(int age) {
         this.age = age;
     }
-
 
 }

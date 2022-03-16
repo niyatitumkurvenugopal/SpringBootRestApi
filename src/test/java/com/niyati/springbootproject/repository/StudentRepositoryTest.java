@@ -1,6 +1,6 @@
-package com.example.demoproject.student.repository;
+package com.niyati.springbootproject.repository;
 
-import com.example.demoproject.student.model.Student;
+import com.niyati.springbootproject.model.Student;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,3 +43,5 @@ class StudentRepositoryTest {
 
     }
 }
+
+

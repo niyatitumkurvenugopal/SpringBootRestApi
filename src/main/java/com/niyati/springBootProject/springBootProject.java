@@ -1,14 +1,14 @@
-package com.example.demoproject;
+package com.niyati.springbootproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class DemoProjectApplication {
+public class springbootproject {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoProjectApplication.class, args);
+        SpringApplication.run(springbootproject.class, args);
     }
 
 }

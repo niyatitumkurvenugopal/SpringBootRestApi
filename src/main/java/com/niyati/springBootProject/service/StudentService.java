@@ -1,7 +1,7 @@
-package com.example.demoproject.student.service;
+package com.niyati.springbootproject.service;
 
-import com.example.demoproject.student.model.Student;
-import com.example.demoproject.student.repository.StudentRepository;
+import com.niyati.springbootproject.model.Student;
+import com.niyati.springbootproject.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +27,15 @@ public class StudentService {
         }
         studentRepository.save(student);
     }
-
-
 }
+
+
+
+
+
+
+
+
+
+
 

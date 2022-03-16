@@ -1,7 +1,8 @@
-package com.example.demoproject.student.service;
+package com.niyati.springbootproject.service;
 
-import com.example.demoproject.student.model.Student;
-import com.example.demoproject.student.repository.StudentRepository;
+
+import com.niyati.springbootproject.model.Student;
+import com.niyati.springbootproject.repository.StudentRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,16 +21,16 @@ class StudentServiceTest {
     @Mock
     private StudentRepository studentRepository;
 
-    private StudentService student;
+    private StudentService studentService;
 
     @BeforeEach
     void setUp() {
-        student = new StudentService(studentRepository);
+        studentService = new StudentService(studentRepository);
     }
 
     @Test
     void canGetStudents() {
-        student.getStudents();
+        studentService.getStudents();
 
         verify(studentRepository).findAll();
 
@@ -39,7 +40,7 @@ class StudentServiceTest {
     void canAddNewStudent() {
         Student studentdetails = new Student("Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04));
 
-        student.addNewStudent(studentdetails);
+        studentService.addNewStudent(studentdetails);
         ArgumentCaptor<Student> studentArgumentCaptor = ArgumentCaptor.forClass(Student.class);
         verify(studentRepository).save(studentArgumentCaptor.capture());
 
