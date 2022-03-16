@@ -1,7 +1,7 @@
 package com.niyati.springbootproject.service;
 
-import com.niyati.springbootproject.model.Student;
 import com.niyati.springbootproject.repository.StudentRepository;
+import com.niyati.springbootproject.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,12 +20,15 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public void addNewStudent(Student student) {
+    public boolean addNewStudent(Student student) {
         boolean existsEmail = studentRepository.selectExistsEmail(student.getEmail());
         if (existsEmail) {
             throw new IllegalStateException("Email " + student.getEmail() + " taken");
         }
-        studentRepository.save(student);
+        else {
+             studentRepository.save(student);
+             return true;
+        }
     }
 }
 

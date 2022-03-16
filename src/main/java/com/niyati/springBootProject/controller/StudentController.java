@@ -24,8 +24,13 @@ public class StudentController {
     }
 
     @PostMapping
-    public void registerNewStudent(@RequestBody Student student) {
-        studentService.addNewStudent(student);
+    public String registerNewStudent(@RequestBody Student student) {
+        if (student != null) {
+            studentService.addNewStudent(student);
+            return "Student data is registered successfully";
+        } else {
+            return "Student data is not registered";
+        }
     }
 }
 
