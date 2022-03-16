@@ -24,7 +24,7 @@ class StudentRepositoryTest {
     @Test
     void itShouldCheckIfStudentEmailExists() {
         String email = "gana@gmail.com";
-        Student studentdetails = new Student("Gana", email, LocalDate.of(1996, 07, 04));
+        Student studentdetails = new Student(1L,"Gana", email, LocalDate.of(1996, 07, 04),25);
         student.save(studentdetails);
 
         Boolean exists = student.selectExistsEmail(email);

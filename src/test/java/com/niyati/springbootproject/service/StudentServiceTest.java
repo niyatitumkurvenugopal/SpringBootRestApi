@@ -38,7 +38,7 @@ class StudentServiceTest {
 
     @Test
     void canAddNewStudent() {
-        Student studentdetails = new Student("Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04));
+        Student studentdetails = new Student(1L,"Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04),25);
 
         studentService.addNewStudent(studentdetails);
         ArgumentCaptor<Student> studentArgumentCaptor = ArgumentCaptor.forClass(Student.class);

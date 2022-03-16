@@ -9,7 +9,11 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
@@ -21,24 +25,23 @@ public class StudentControllerTest {
     @Mock
     StudentService studentService;
 
-//    @Test
-//    public void getStudentDetails() {
-//        Student student1 = new Student("Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04));
-//        Student student2 = new Student("Deepthi", "deepthi@gmail.com", LocalDate.of(1995, 06, 03));
-//
-//        List<Student> students = Arrays.asList(student1, student2);
-//        List<Student> result = studentController.getStudents();
-//
-//
-//        assertThat(result).hasSize(2).contains();
-//
-//    }
+    @Test
+    public void getStudentDetails() {
+       Student student1 = new Student(1L,"Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04),25);
+        Student student2 = new Student(2L,"Deepthi", "deepthi@gmail.com", LocalDate.of(1995, 06, 03),26);
+        List<Student> studentDetailsExpected = new ArrayList<Student>();
+        List<Student> studentDetailsresult = studentController.getStudents();
+
+
+        assertEquals(studentDetailsExpected,studentDetailsresult);
+
+    }
 
     @Test
     public void addNewStudentDetails() {
 
         String expected = "Student data is registered successfully";
-        Student student = new Student("Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04));
+        Student student = new Student(1L,"Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04),26);
 
         String result = studentController.registerNewStudent(student);
 
