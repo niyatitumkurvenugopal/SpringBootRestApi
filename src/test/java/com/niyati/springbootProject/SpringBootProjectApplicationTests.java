@@ -1,4 +1,4 @@
-package com.niyati.springbootproject;
+package com.niyati.springbootProject;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
