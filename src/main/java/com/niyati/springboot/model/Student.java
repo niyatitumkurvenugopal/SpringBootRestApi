@@ -1,4 +1,4 @@
-package com.niyati.spring.model;
+package com.niyati.springboot.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;

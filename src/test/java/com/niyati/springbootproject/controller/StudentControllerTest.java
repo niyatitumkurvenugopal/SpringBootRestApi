@@ -1,8 +1,8 @@
 package com.niyati.springbootproject.controller;
 
-import com.niyati.spring.controller.StudentController;
-import com.niyati.spring.model.Student;
-import com.niyati.spring.service.StudentService;
+import com.niyati.springboot.controller.StudentController;
+import com.niyati.springboot.model.Student;
+import com.niyati.springboot.service.StudentService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

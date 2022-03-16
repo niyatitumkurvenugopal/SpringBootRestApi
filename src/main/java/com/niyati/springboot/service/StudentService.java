@@ -1,7 +1,7 @@
-package com.niyati.spring.service;
+package com.niyati.springboot.service;
 
-import com.niyati.spring.repository.StudentRepository;
-import com.niyati.spring.model.Student;
+import com.niyati.springboot.repository.StudentRepository;
+import com.niyati.springboot.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

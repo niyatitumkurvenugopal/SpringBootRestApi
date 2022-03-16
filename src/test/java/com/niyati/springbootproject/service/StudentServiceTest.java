@@ -1,9 +1,9 @@
 package com.niyati.springbootproject.service;
 
 
-import com.niyati.spring.model.Student;
-import com.niyati.spring.repository.StudentRepository;
-import com.niyati.spring.service.StudentService;
+import com.niyati.springboot.model.Student;
+import com.niyati.springboot.repository.StudentRepository;
+import com.niyati.springboot.service.StudentService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
