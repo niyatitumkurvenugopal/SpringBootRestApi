@@ -1,5 +1,7 @@
 package com.niyati.springbootproject.controller;
 
+import com.niyati.springbootproject.model.Student;
+import com.niyati.springbootproject.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

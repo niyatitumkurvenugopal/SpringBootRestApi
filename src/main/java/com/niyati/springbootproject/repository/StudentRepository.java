@@ -1,5 +1,6 @@
 package com.niyati.springbootproject.repository;
 
+import com.niyati.springbootproject.model.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
