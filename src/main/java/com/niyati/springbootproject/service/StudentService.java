@@ -1,11 +1,13 @@
 package com.niyati.springbootproject.service;
 
+import com.niyati.springbootproject.exception.EmailTakenException;
 import com.niyati.springbootproject.model.Student;
 import com.niyati.springbootproject.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -21,9 +23,9 @@ public class StudentService {
     }
 
     public boolean addNewStudent(Student student) {
-        boolean existsEmail = studentRepository.selectExistsEmail(student.getEmail());
-        if (existsEmail) {
-            throw new IllegalStateException("Email " + student.getEmail() + " taken");
+        Optional<Student> existsEmail = studentRepository.findStudentByEmail(student.getEmail());
+        if (existsEmail.isPresent()) {
+            throw new EmailTakenException("Email " + student.getEmail() + " taken");
         } else {
             studentRepository.save(student);
             return true;
