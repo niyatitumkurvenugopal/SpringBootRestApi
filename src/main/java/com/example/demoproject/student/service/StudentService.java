@@ -23,7 +23,7 @@ public class StudentService {
     public void addNewStudent(Student student) {
         boolean existsEmail = studentRepository.selectExistsEmail(student.getEmail());
         if (existsEmail) {
-            throw new IllegalStateException("Email " + student.getEmail() + "taken");
+            throw new IllegalStateException(" Email " + student.getEmail() + "taken");
         }
         studentRepository.save(student);
     }
