@@ -1,12 +1,10 @@
-package com.example.springbootproject.service;
-
+package com.niyati.springbootproject.controller;
 
 import com.niyati.springbootproject.model.Student;
-import com.niyati.springbootproject.repository.StudentRepository;
 import com.niyati.springbootproject.service.StudentService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -17,39 +15,37 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-class StudentServiceTest {
+public class StudentControllerTest {
+
+    @InjectMocks
+    StudentController studentController;
 
     @Mock
-    private StudentRepository studentRepository;
-
-    private StudentService studentService;
-
-    @BeforeEach
-    void setUp() {
-        studentService = new StudentService(studentRepository);
-    }
+    StudentService studentService;
 
     @Test
-    void canGetStudents() {
-
+    public void getStudentDetails() {
         Student student1 = new Student(1L, "Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04), 25);
         Student student2 = new Student(2L, "Deepthi", "deepthi@gmail.com", LocalDate.of(1995, 06, 03), 26);
         List<Student> studentDetailsExpected = new ArrayList<Student>();
-        List<Student> studentDetailsresult = studentService.getStudents();
+        List<Student> studentDetailsResult = studentController.getStudents();
 
 
-        assertEquals(studentDetailsExpected, studentDetailsresult);
+        assertEquals(studentDetailsExpected, studentDetailsResult);
 
     }
 
     @Test
-    void canAddNewStudent() {
-        Student studentdetails = new Student(1L, "Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04), 25);
-        boolean newStudentDetailExpected = true;
-        boolean newStudentDetailResult = studentService.addNewStudent(studentdetails);
+    public void addNewStudentDetails() {
+
+        String newStudentDetailExpected = "Student data is registered successfully";
+        Student student = new Student(1L, "Gana", "gana@gmail.com", LocalDate.of(1996, 07, 04), 26);
+
+        String newStudentDetailResult = studentController.registerNewStudent(student);
 
         assertEquals(newStudentDetailExpected, newStudentDetailResult);
-    }
 
+
+    }
 
 }
